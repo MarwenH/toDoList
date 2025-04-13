@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+        <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+    />
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+    ></script>
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+        <div class="main-box">
+            <h1>To DO List</h1>
+            <div id="box">
+                <div id="header">
+                    <h2>My tasks</h2>
+                    <i class="fa-solid fa-plus" id="addTask"onclick="addNewTask()"> Add new task</i>
+                </div>
+                <div id="tasks">
+                    <!-- tasks display  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- pop up -->
+
+    <div class="popup" id="popup1">
+        <div class="overlay"></div>
+        <div class="popup-ctn">
+            <div id="close-btn" class="close-btn" onclick="togglePopup()">&times;</div>
+            <h3 id="popup-title">Add new task</h3>
+            <h3 id="popup-title-edit">Edit task</h3>
+            <form action="" id="form">
+
+                <div>
+                    <label for="input-title">Title</label>
+                    <input type="text" name="" id="input-title">
+                    <span id="msg"></span>
+                </div>
+                
+                <div>
+                    <label for="input-description">Description</label>
+                    <textarea name="" id="input-description" cols="50" rows="5"></textarea>
+                    <span id="msg2"></span>
+                </div>
+                
+                <div>
+                    <label for="input-date">Date</label>
+                    <input type="date" name="" id="input-date"></div>
+                <div>
+                    <input class="form-check-input" type="radio" name="isdone" id="done" value="done" >
+                    <label for="done">Done</label>
+                </div>
+
+                <div>
+                    <input class="form-check-input" type="radio" name="isdone" id="notyet" value="notyet" checked>
+                    <label for="notyet">Not yet</label>
+                </div>
+
+                <div class="btn-save">
+                    <button id="save">Save</button>
+                </div>
+
+                <div class="btn-update">
+                    <button id="update">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- popup confirmation -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete Task</h5>
+              <div id="close-btn" class="close-btn" data-bs-dismiss="modal">&times;</div>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete the task ?<br>
+                <p id="deleted-task-t"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btn-no" data-bs-dismiss="modal">No</button>
+              <button type="button" id="btn-yes" onclick="removeTask(deleteIndex)" data-bs-dismiss="modal">yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+    <script src="main.js"></script>
+</body>
+</html>
